@@ -1,0 +1,83 @@
+.custom-cursor-container {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-container.hidden {
+  opacity: 0;
+}
+
+/* Inner Solid Blue Dot */
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary, #1868e8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, opacity 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 0 8px rgba(24, 104, 232, 0.4);
+}
+
+/* Outer Blue Ring / Circle */
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid var(--primary, #1868e8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999998;
+  transform: translate(-50%, -50%);
+  background-color: rgba(24, 104, 232, 0.04);
+  transition: width 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              transform 0.15s ease-out;
+  box-shadow: 0 0 12px rgba(24, 104, 232, 0.15);
+}
+
+/* Hover State on clickable items */
+.custom-cursor-container.hovered .custom-cursor-ring {
+  width: 52px;
+  height: 52px;
+  background-color: rgba(24, 104, 232, 0.12);
+  border-color: var(--primary, #1868e8);
+  box-shadow: 0 0 18px rgba(24, 104, 232, 0.3);
+}
+
+.custom-cursor-container.hovered .custom-cursor-dot {
+  transform: translate(-50%, -50%) scale(1.4);
+  background-color: var(--primary, #1868e8);
+}
+
+/* Click/Active State */
+.custom-cursor-container.clicked .custom-cursor-ring {
+  transform: translate(-50%, -50%) scale(0.85);
+  background-color: rgba(24, 104, 232, 0.25);
+}
+
+.custom-cursor-container.clicked .custom-cursor-dot {
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+/* Hide on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}

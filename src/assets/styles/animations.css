@@ -1,0 +1,227 @@
+/* ============================================
+   TechCore – Animation Styles
+   ============================================ */
+
+/* ---- Fade In Animations ---- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/* ---- Stagger Delays ---- */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+
+
+/* ---- Floating Animations ---- */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-diagonal {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -10px); }
+  50% { transform: translate(0, -20px); }
+  75% { transform: translate(-10px, -10px); }
+}
+
+.float-gentle { animation: float-gentle 8s ease-in-out infinite; }
+.float-slow { animation: float-slow 6s ease-in-out infinite; }
+.float-diagonal { animation: float-diagonal 10s ease-in-out infinite; }
+
+
+/* ---- Pulse & Glow ---- */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(74, 58, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(74, 58, 255, 0.4); }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+
+/* ---- Rotating ---- */
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-slow { animation: rotate-slow 20s linear infinite; }
+
+
+/* ---- Gradient Shift ---- */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animated {
+  background-size: 200% auto;
+  animation: gradient-shift 4s ease infinite;
+}
+
+
+/* ---- Particles Background ---- */
+.particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.particle:nth-child(1) { top: 20%; left: 10%; animation: float-slow 7s ease-in-out infinite; animation-delay: 0s; }
+.particle:nth-child(2) { top: 60%; left: 80%; animation: float-slow 9s ease-in-out infinite; animation-delay: 1s; }
+.particle:nth-child(3) { top: 30%; left: 50%; animation: float-gentle 8s ease-in-out infinite; animation-delay: 2s; width: 6px; height: 6px; }
+.particle:nth-child(4) { top: 80%; left: 20%; animation: float-slow 6s ease-in-out infinite; animation-delay: 0.5s; }
+.particle:nth-child(5) { top: 10%; left: 70%; animation: float-gentle 10s ease-in-out infinite; animation-delay: 3s; width: 3px; height: 3px; }
+.particle:nth-child(6) { top: 50%; left: 40%; animation: float-diagonal 12s ease-in-out infinite; animation-delay: 1.5s; width: 5px; height: 5px; background: var(--secondary); }
+.particle:nth-child(7) { top: 70%; left: 60%; animation: float-slow 8s ease-in-out infinite; animation-delay: 2.5s; }
+.particle:nth-child(8) { top: 40%; left: 90%; animation: float-gentle 7s ease-in-out infinite; animation-delay: 1s; width: 4px; height: 4px; background: var(--secondary); }
+
+
+/* ---- Hover Underline Effect ---- */
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+
+/* ---- Marquee / Infinite Scroll ---- */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-flex;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+
+/* ---- Reduce Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .fade-in, .fade-in-left, .fade-in-right, .fade-in-up, .scale-in {
+    opacity: 1;
+    transform: none;
+  }
+}
