@@ -54,8 +54,8 @@ ${JSON.stringify(siteData)}`
         headers: {
           'Authorization': `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
           'Content-Type': 'application/json',
-          'HTTP-Referer': 'http://localhost:5174',
-          'X-Title': 'ChoreDigital Local Dev'
+          'HTTP-Referer': window.location.origin,
+          'X-Title': 'ChoreDigital'
         },
         body: JSON.stringify({
           model: 'google/gemini-2.5-flash',
