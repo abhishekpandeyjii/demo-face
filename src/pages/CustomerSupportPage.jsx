@@ -121,8 +121,8 @@ export default function CustomerSupportPage() {
                 <i className="fas fa-headset main-icon"></i>
                 <h3>Upgrade Your Support?</h3>
                 <p>Let us handle your customer queries while you focus on growing your business.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

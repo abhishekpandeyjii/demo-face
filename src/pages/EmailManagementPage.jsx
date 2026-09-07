@@ -121,8 +121,8 @@ export default function EmailManagementPage() {
                 <i className="fas fa-envelope main-icon"></i>
                 <h3>Drowning in Emails?</h3>
                 <p>Let our experts organize your inbox and handle your communications professionally.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

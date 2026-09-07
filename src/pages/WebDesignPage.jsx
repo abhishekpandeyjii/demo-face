@@ -124,8 +124,8 @@ export default function WebDesignPage() {
                 <i className="fas fa-headset main-icon"></i>
                 <h3>Start Your Web Project</h3>
                 <p>Talk to our design experts to discuss your website vision and get a free quote.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

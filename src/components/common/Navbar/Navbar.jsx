@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="container">
           <div className="top-bar-content">
             <div className="top-bar-left">
-              <span><i className="fas fa-phone"></i> <a href="tel:+917276831928">+91- 7276831928</a></span>
+              <span><i className="fas fa-phone"></i> <a href="tel:+919860867066">+91- 9860867066</a></span>
               <span><i className="fas fa-envelope"></i> <a href="mailto:support@chorevirtual.com">support@chorevirtual.com</a></span>
               <span className="address-span"><i className="fas fa-location-dot"></i> Malad (W), Mumbai 40064</span>
             </div>

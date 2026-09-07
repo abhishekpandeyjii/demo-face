@@ -121,8 +121,8 @@ export default function DataEntryPage() {
                 <i className="fas fa-database main-icon"></i>
                 <h3>Need Data Processing?</h3>
                 <p>Send us a sample and get a free trial with guaranteed accuracy benchmarks.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

@@ -121,8 +121,8 @@ export default function DigitalMarketingPage() {
                 <i className="fas fa-chart-line main-icon"></i>
                 <h3>Ready to Grow Online?</h3>
                 <p>Get a free digital marketing audit and discover untapped growth opportunities for your brand.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

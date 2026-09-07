@@ -9,7 +9,7 @@ export const siteData = {
     fullName: 'ChoreDigital Communication LLP',
     tagline: 'Creative Digital Innovators',
     description: 'Empowering Brands through Cutting-Edge Web & Digital Solutions. With a legacy spanning 13+ years, ChoreDigital stands as a trusted web development and digital solutions company in India.',
-    phone: '+91- 7276831928',
+    phone: '+91- 9860867066',
     whatsapp: '+91- 98608 67066',
     email: 'support@chorevirtual.com',
     accountsEmail: 'accounts@chorevirtual.com',

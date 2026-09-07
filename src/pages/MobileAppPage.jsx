@@ -121,8 +121,8 @@ export default function MobileAppPage() {
                 <i className="fas fa-mobile-screen main-icon"></i>
                 <h3>Have an App Idea?</h3>
                 <p>Share your vision with us and get a detailed project estimate within 24 hours.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

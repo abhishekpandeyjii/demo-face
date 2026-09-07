@@ -121,8 +121,8 @@ export default function ResearchWorkPage() {
                 <i className="fas fa-magnifying-glass-chart main-icon"></i>
                 <h3>Need Custom Research?</h3>
                 <p>Tell us what you&apos;re looking for and we&apos;ll deliver a detailed, sourced report.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>

@@ -121,8 +121,8 @@ export default function DocumentManagementPage() {
                 <i className="fas fa-folder-tree main-icon"></i>
                 <h3>Documents in Disarray?</h3>
                 <p>We&apos;ll organize your entire document system and set up efficient workflows.</p>
-                <a href="tel:+917276831928" className="sidebar-phone-btn">
-                  <i className="fas fa-phone-volume"></i> +91 7276831928
+                <a href="tel:+919860867066" className="sidebar-phone-btn">
+                  <i className="fas fa-phone-volume"></i> +91 9860867066
                 </a>
               </div>
             </div>
