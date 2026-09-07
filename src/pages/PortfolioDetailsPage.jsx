@@ -19,7 +19,7 @@ export default function PortfolioDetailsPage() {
         <div className="container">
           <div className="portfolio-details-image fade-in-up" ref={contentRef} style={{ marginBottom: '50px' }}>
             <img 
-              src="/images/portfolio-webapp.jpg" 
+              src="/images/portfolio_ecommerce.png" 
               alt="Project Showcase" 
               style={{ width: '100%', borderRadius: 'var(--radius-xl)' }} 
             />

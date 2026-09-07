@@ -6,7 +6,7 @@ import { useScrollRevealChildren } from '../../../hooks/useScrollReveal';
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState('all');
-  const gridRef = useScrollRevealChildren('.fade-in');
+  const gridRef = useScrollRevealChildren('.fade-in', {}, [activeFilter]);
 
   const filteredProjects = activeFilter === 'all'
     ? siteData.portfolio

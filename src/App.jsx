@@ -7,6 +7,8 @@ import CustomCursor from './components/common/CustomCursor/CustomCursor';
 import Navbar from './components/common/Navbar/Navbar';
 import Footer from './components/common/Footer/Footer';
 import BackToTop from './components/common/BackToTop/BackToTop';
+import Chatbot from './components/common/Chatbot/Chatbot';
+import WhatsAppButton from './components/common/WhatsAppButton/WhatsAppButton';
 import { useStickyHeader } from './hooks/useStickyHeader';
 
 // Pages
@@ -25,20 +27,52 @@ import TechnologyPage from './pages/TechnologyPage';
 import ClientsPage from './pages/ClientsPage';
 import NotFound from './pages/NotFound';
 
+// New Pages
+import WebDesignPage from './pages/WebDesignPage';
+import MobileAppPage from './pages/MobileAppPage';
+import DigitalMarketingPage from './pages/DigitalMarketingPage';
+import ProductDevelopmentPage from './pages/ProductDevelopmentPage';
+import EmailManagementPage from './pages/EmailManagementPage';
+import DataEntryPage from './pages/DataEntryPage';
+import CustomerSupportPage from './pages/CustomerSupportPage';
+import DocumentManagementPage from './pages/DocumentManagementPage';
+import ResearchWorkPage from './pages/ResearchWorkPage';
+import SitemapPage from './pages/SitemapPage';
+import PrivacyTermsPage from './pages/PrivacyTermsPage';
+import PresentationPage from './pages/PresentationPage';
+
 // Lenis smooth scroll setup
 import Lenis from 'lenis';
 
-// Scroll to top on route change
+// Scroll to top or to hash element on route change
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      // Small delay to ensure the page and elements have rendered
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          if (window.lenis) {
+            window.lenis.scrollTo(element, { offset: -80 }); // -80px to account for sticky header
+          } else {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, 100);
+    } else {
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [pathname, hash]);
 
   return null;
 }
-
 // Layout wrapper with shared components
 function Layout({ children }) {
   const { showBackToTop } = useStickyHeader();
@@ -57,7 +91,13 @@ function Layout({ children }) {
     }
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    // Make lenis globally accessible for hash scrolling
+    window.lenis = lenis;
+
+    return () => {
+      window.lenis = null;
+      lenis.destroy();
+    };
   }, []);
 
   return (
@@ -65,6 +105,8 @@ function Layout({ children }) {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <Chatbot />
+      <WhatsAppButton />
       <BackToTop visible={showBackToTop} />
     </>
   );
@@ -91,6 +133,22 @@ export default function App() {
           <Route path="/blog-details" element={<BlogDetailsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          
+          <Route path="/website-design" element={<WebDesignPage />} />
+          <Route path="/mobile-app-development" element={<MobileAppPage />} />
+          <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
+          <Route path="/product-development" element={<ProductDevelopmentPage />} />
+          
+          <Route path="/email-management" element={<EmailManagementPage />} />
+          <Route path="/data-entry" element={<DataEntryPage />} />
+          <Route path="/customer-support" element={<CustomerSupportPage />} />
+          <Route path="/document-management" element={<DocumentManagementPage />} />
+          <Route path="/research-work" element={<ResearchWorkPage />} />
+
+          <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="/privacy-terms" element={<PrivacyTermsPage />} />
+          <Route path="/presentation" element={<PresentationPage />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

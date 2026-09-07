@@ -39,7 +39,7 @@ export function useScrollReveal(options = {}) {
 /**
  * Hook to observe multiple children within a container for staggered animations.
  */
-export function useScrollRevealChildren(selector = '.fade-in', options = {}) {
+export function useScrollRevealChildren(selector = '.fade-in', options = {}, dependencies = []) {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -68,7 +68,8 @@ export function useScrollRevealChildren(selector = '.fade-in', options = {}) {
     return () => {
       elements.forEach((el) => observer.unobserve(el));
     };
-  }, [selector, options.threshold, options.rootMargin]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selector, options.threshold, options.rootMargin, JSON.stringify(dependencies)]);
 
   return containerRef;
 }

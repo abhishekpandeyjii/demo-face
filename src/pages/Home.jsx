@@ -8,7 +8,6 @@ import Process from '../components/sections/Process/Process';
 import Portfolio from '../components/sections/Portfolio/Portfolio';
 import Testimonials from '../components/sections/Testimonials/Testimonials';
 import Team from '../components/sections/Team/Team';
-import Pricing from '../components/sections/Pricing/Pricing';
 import Blog from '../components/sections/Blog/Blog';
 import FAQ from '../components/sections/FAQ/FAQ';
 import CTA from '../components/sections/CTA/CTA';
@@ -26,7 +25,6 @@ export default function Home() {
       <Portfolio />
       <Testimonials />
       <Team />
-      <Pricing />
       <Blog />
       <FAQ />
       <CTA />

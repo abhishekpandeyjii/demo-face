@@ -15,7 +15,7 @@ export default function Team() {
           description="Our talented team of professionals drives innovation and delivers exceptional results."
         />
 
-        <div className="grid grid-4" ref={gridRef}>
+        <div className="grid grid-3" ref={gridRef}>
           {siteData.team.map((member, index) => (
             <div className={`fade-in delay-${index + 1}`} key={index}>
               <div className="team-card">

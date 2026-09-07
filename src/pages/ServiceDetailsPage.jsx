@@ -31,8 +31,8 @@ export default function ServiceDetailsPage() {
             {/* Main Content */}
             <div className="service-main-card fade-in-left" ref={contentRef}>
               <img 
-                src="/images/service-cloud.jpg" 
-                alt="Cloud Solutions & Migration" 
+                src="/images/portfolio_ots.png" 
+                alt="Service Showcase" 
                 className="service-main-image"
               />
               <h2 className="service-title">Enterprise Cloud Solutions & Seamless Migration</h2>

@@ -16,6 +16,7 @@ export default function Button({ children, to, href, variant = 'primary', size, 
   }
 
   // External link
+
   if (href) {
     return (
       <a href={href} className={classes} target="_blank" rel="noopener noreferrer" {...props}>
@@ -33,3 +34,5 @@ export default function Button({ children, to, href, variant = 'primary', size, 
     </button>
   );
 }
+
+

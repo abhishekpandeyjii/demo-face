@@ -19,6 +19,9 @@ export default function Process() {
           {(siteData.process || []).map((step, index) => (
             <div className={`fade-in delay-${index + 1}`} key={index}>
               <div className="process-card">
+                <div className="process-image-wrapper">
+                  <img src={step.image} alt={step.title} className="process-image" />
+                </div>
                 <div className="process-step-number">{step.step}</div>
                 <h4>{step.title}</h4>
                 <p>{step.description}</p>

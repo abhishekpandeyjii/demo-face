@@ -14,9 +14,6 @@ export default function Hero() {
         <div className="shape shape-2"></div>
         <div className="shape shape-3"></div>
       </div>
-      <div className="hero-grid"></div>
-      <div className="hero-grid-dots"></div>
-
       {/* Particles */}
       <div className="particles-bg">
         {[...Array(8)].map((_, i) => (

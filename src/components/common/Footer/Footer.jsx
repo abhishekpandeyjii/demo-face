@@ -91,9 +91,9 @@ export default function Footer() {
               Copyright © 2014 - {currentYear} <strong>ChoreDigital Communication LLP</strong> All Rights Reserved
             </p>
             <div className="footer-bottom-links">
-              <a href="#">Sitemap</a>
-              <a href="#">Privacy & Terms of Services</a>
-              <a href="#">PowerPoint Presentation</a>
+              <Link to="/sitemap">Sitemap</Link>
+              <Link to="/privacy-terms">Privacy & Terms of Services</Link>
+              <Link to="/presentation">PowerPoint Presentation</Link>
             </div>
           </div>
         </div>

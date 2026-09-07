@@ -10,7 +10,7 @@ export default function CTA() {
         <div className="cta-wrapper scale-in" ref={ref}>
           <h2>Ready to Transform Your Business?</h2>
           <p>
-            Let's discuss how our technology solutions can drive your business forward. 
+            Let's discuss how our technology solutions can drive your business forward.
             Get in touch with our team today for a free consultation.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', position: 'relative', zIndex: 1 }}>

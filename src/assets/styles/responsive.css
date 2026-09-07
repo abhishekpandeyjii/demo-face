@@ -90,10 +90,30 @@
 
   .menu-toggle {
     display: flex;
+    z-index: 101; /* Ensure it stays above logo shape */
   }
 
   .header-cta {
     display: none;
+  }
+
+  /* Fix Top Bar */
+  .top-bar-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .top-bar-left {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Fix Logo overlap */
+  .logo {
+    padding: 20px 40px 20px 0;
+  }
+  .logo-text {
+    font-size: 1.4rem;
   }
 
   /* Hero */
@@ -185,6 +205,24 @@
 
   .section-title {
     margin-bottom: 40px;
+  }
+
+  /* Hide Top Bar on small mobile */
+  .top-bar {
+    display: none;
+  }
+
+  /* Adjust Logo for mobile */
+  .logo {
+    padding: 15px 20px 15px 0;
+  }
+  .logo-text {
+    font-size: 1.2rem;
+  }
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
   }
 
   /* Hero */

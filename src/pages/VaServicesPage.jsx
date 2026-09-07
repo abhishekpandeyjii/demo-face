@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PageBanner from '../components/common/PageBanner/PageBanner';
 import CTA from '../components/sections/CTA/CTA';
 import { siteData } from '../data/siteData';
@@ -32,6 +33,11 @@ export default function VaServicesPage() {
                 </div>
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', color: 'var(--text-dark)' }}>{va.title}</h3>
                 <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.7' }}>{va.description}</p>
+                {va.link && (
+                  <Link to={va.link} className="service-link" style={{ marginTop: '15px', display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', fontWeight: 600, fontSize: '14px' }}>
+                    Learn More <i className="fas fa-arrow-right"></i>
+                  </Link>
+                )}
               </div>
             ))}
           </div>
@@ -42,3 +48,4 @@ export default function VaServicesPage() {
     </>
   );
 }
+
