@@ -7,6 +7,7 @@ import Features from '../components/sections/Features/Features';
 import Process from '../components/sections/Process/Process';
 import Portfolio from '../components/sections/Portfolio/Portfolio';
 import Testimonials from '../components/sections/Testimonials/Testimonials';
+import ClientLogos from '../components/sections/Clients/ClientLogos';
 import Team from '../components/sections/Team/Team';
 import Blog from '../components/sections/Blog/Blog';
 import FAQ from '../components/sections/FAQ/FAQ';
@@ -24,6 +25,7 @@ export default function Home() {
       <Process />
       <Portfolio />
       <Testimonials />
+      <ClientLogos isGrid={false} />
       <Team />
       <Blog />
       <FAQ />

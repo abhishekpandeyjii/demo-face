@@ -84,6 +84,27 @@ export default function WebDesignPage() {
                 <li><i className="fas fa-circle-check"></i> Ongoing Maintenance & Support Plans</li>
                 <li><i className="fas fa-circle-check"></i> Average 40% Increase in Conversion Rates</li>
               </ul>
+
+              <h3 style={{ fontSize: '1.5rem', marginTop: '35px', marginBottom: '15px' }}>Our Recent Web Design Projects</h3>
+              <div className="grid grid-2" style={{ gap: '20px' }}>
+                {[
+                  { img: '/images/FAFAI-Front-1024x528.png', title: 'FAFAI Website', category: 'Web Development' },
+                  { img: '/images/GeoTech-Front-1024x530.png', title: 'GeoTech', category: 'Web Development' },
+                  { img: '/images/SKFF-Front-1024x532.png', title: 'SKFF', category: 'Web Development' },
+                  { img: '/images/boono-front-1024x527.png', title: 'Boono Web Platform', category: 'Web Development' },
+                  { img: '/images/puppsstud-front-1024x525.png', title: 'Puppsstud Web Platform', category: 'Web Development' }
+                ].map((item, idx) => (
+                  <div key={idx} className="portfolio-card" style={{ marginBottom: '20px' }}>
+                    <Link to="/portfolio-details" state={{ project: { image: item.img, title: item.title, categoryLabel: item.category, description: 'Custom web development and design for ' + item.title } }} className="portfolio-image" style={{ display: 'block' }}>
+                      <img src={item.img} alt={item.title} />
+                      <div className="portfolio-overlay">
+                        <span className="portfolio-category">{item.category}</span>
+                        <h4>{item.title}</h4>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Sidebar */}

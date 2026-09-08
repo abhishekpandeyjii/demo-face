@@ -10,6 +10,7 @@ export const siteData = {
     tagline: 'Creative Digital Innovators',
     description: 'Empowering Brands through Cutting-Edge Web & Digital Solutions. With a legacy spanning 13+ years, ChoreDigital stands as a trusted web development and digital solutions company in India.',
     phone: '+91- 9860867066',
+    phone2: '+91- 9049540142',
     whatsapp: '+91- 98608 67066',
     email: 'support@chorevirtual.com',
     accountsEmail: 'accounts@chorevirtual.com',
@@ -29,6 +30,7 @@ export const siteData = {
         { label: 'Mobile App Development', path: '/mobile-app-development' },
         { label: 'Digital Marketing', path: '/digital-marketing' },
         { label: 'Product Development', path: '/product-development' },
+        { label: 'AI Automation', path: '/ai-automation' },
       ],
     },
     {
@@ -89,6 +91,20 @@ export const siteData = {
       description: 'High-performance products designed to streamline operations and enhance productivity, including OTS, Online Billing, and CCM.',
       link: '/product-development',
       subServices: ['OTS (Order Tracking System)', 'Online Billing for Manufacturing', 'CCM (Customer Communication)', 'Custom Enterprise SaaS']
+    },
+    {
+      icon: 'fas fa-users-gear',
+      title: 'CRM',
+      description: 'Powerful Customer Relationship Management solutions to manage leads, automate workflows, track sales pipelines, and boost customer retention.',
+      link: '/crm',
+      subServices: ['Lead Management', 'Sales Pipeline Tracking', 'Customer Data Management', 'CRM Integration & Support']
+    },
+    {
+      icon: 'fas fa-robot',
+      title: 'AI Automation',
+      description: 'Harness the power of Artificial Intelligence to automate repetitive tasks, enhance decision-making, and accelerate business growth with smart workflows.',
+      link: '/ai-automation',
+      subServices: ['AI Chatbots', 'Process Automation', 'Predictive Analytics', 'AI-Powered Integrations']
     },
   ],
 
@@ -161,7 +177,7 @@ export const siteData = {
   counters: [
     { icon: 'fas fa-calendar-check', number: 13, suffix: '+ Years', label: 'Legacy of Excellence' },
     { icon: 'fas fa-project-diagram', number: 500, suffix: '+', label: 'Projects Completed' },
-    { icon: 'fas fa-users', number: 200, suffix: '+', label: 'Global Clients' },
+    { icon: 'fas fa-users', number: 400, suffix: '+', label: 'Global Clients' },
     { icon: 'fas fa-trophy', number: 99, suffix: '%', label: 'Client Retention' },
   ],
 
@@ -218,6 +234,30 @@ export const siteData = {
       category: 'mobile',
       categoryLabel: 'Mobile Development',
       description: 'Fast, secure mobile application for iOS & Android.',
+    },
+    {
+      image: '/images/app_pupke.png',
+      title: 'Pupke & Stud',
+      category: 'mobile',
+      categoryLabel: 'Mobile App',
+      description: 'Revolutionizing the pet ecosystem by connecting breeders and pet parents on a single-window platform with detailed puppy profiles.',
+      link: '/mobile-app-development',
+    },
+    {
+      image: '/images/app_sunshine.png',
+      title: 'Sunshine WebTV',
+      category: 'mobile',
+      categoryLabel: 'Mobile App',
+      description: 'An all-in-one streaming platform for web series, movies, short films, documentaries, and music shows with free unlimited streaming.',
+      link: '/mobile-app-development',
+    },
+    {
+      image: '/images/app_bonno.png',
+      title: 'Bonno - Pet Care App',
+      category: 'mobile',
+      categoryLabel: 'Mobile App',
+      description: 'Comprehensive pet services app covering boarding, sitting, grooming, mating, and professional training programs tailored to each pet.',
+      link: '/mobile-app-development',
     },
   ],
 
@@ -397,9 +437,6 @@ export const siteData = {
     },
     {
       question: 'Are ecommerce digital marketing and development services included?',
-      answer: 'Yes. We provide complete ecommerce development and digital marketing solutions — from custom online stores to targeted paid ad campaigns and conversion tracking.',
-    },
-    {
       question: 'How do your pricing models work?',
       answer: 'We offer flexible pricing options — including project-based, retainer (AMC), and performance-based models — tailored to fit your project scope and business goals.',
     },
@@ -412,6 +449,31 @@ export const siteData = {
     { name: 'Banking & Finance', logo: null },
     { name: 'Real Estate Enterprises', logo: null },
     { name: 'Retail & E-Commerce', logo: null },
+  ],
+
+  clientLogos: [
+    { name: 'Client 1', image: '/images/clients/1 (1).png' },
+    { name: 'Client 2', image: '/images/clients/10 (1).png' },
+    { name: 'Client 3', image: '/images/clients/11 (1).png' },
+    { name: 'Client 4', image: '/images/clients/12.png' },
+    { name: 'Client 5', image: '/images/clients/13 (1).png' },
+    { name: 'Client 6', image: '/images/clients/14 (1).png' },
+    { name: 'Client 7', image: '/images/clients/15.png' },
+    { name: 'Client 8', image: '/images/clients/16.png' },
+    { name: 'Client 9', image: '/images/clients/17.png' },
+    { name: 'Client 10', image: '/images/clients/18.png' },
+    { name: 'Client 11', image: '/images/clients/19.png' },
+    { name: 'Client 12', image: '/images/clients/2.png' },
+    { name: 'Client 13', image: '/images/clients/20.png' },
+    { name: 'Client 14', image: '/images/clients/21.png' },
+    { name: 'Client 15', image: '/images/clients/22.png' },
+    { name: 'Client 16', image: '/images/clients/3 (1).png' },
+    { name: 'Client 17', image: '/images/clients/4.png' },
+    { name: 'Client 18', image: '/images/clients/5 (1).png' },
+    { name: 'Client 19', image: '/images/clients/6 (1).png' },
+    { name: 'Client 20', image: '/images/clients/7 (1).png' },
+    { name: 'Client 21', image: '/images/clients/8 (1).png' },
+    { name: 'Client 22', image: '/images/clients/9 (1).png' },
   ],
 
   // ---- Social Links ----

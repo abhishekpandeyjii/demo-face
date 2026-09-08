@@ -82,6 +82,63 @@ export default function MobileAppPage() {
                 <li><i className="fas fa-circle-check"></i> CI/CD Pipeline for Rapid Releases</li>
                 <li><i className="fas fa-circle-check"></i> 4.8+ Average App Store Rating</li>
               </ul>
+
+              {/* Apps We've Built */}
+              <h3 style={{ fontSize: '1.5rem', marginTop: '40px', marginBottom: '20px' }}>Apps We&apos;ve Built</h3>
+
+              {/* Pupke & Stud */}
+              <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', marginBottom: '40px', padding: '24px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                <img
+                  src="/images/app_pupke.png"
+                  alt="Pupke & Stud App"
+                  style={{ width: '140px', minWidth: '140px', borderRadius: '10px', objectFit: 'contain', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', background: '#fff' }}
+                />
+                <div>
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '12px', color: '#1e293b' }}>🐾 Pupke &amp; Stud</h4>
+                  <ul className="service-checklist" style={{ margin: 0 }}>
+                    <li><i className="fas fa-circle-check"></i> Revolutionizing the pet ecosystem by connecting breeders and pet parents on a single-window platform.</li>
+                    <li><i className="fas fa-circle-check"></i> Bridges breeder and pet parent communities for smooth and transparent communication.</li>
+                    <li><i className="fas fa-circle-check"></i> Comprehensive service offering detailed puppy profiles for informed decision-making.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Sunshine WebTV */}
+              <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', marginBottom: '40px', padding: '24px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                <img
+                  src="/images/app_sunshine.png"
+                  alt="Sunshine WebTV App"
+                  style={{ width: '140px', minWidth: '140px', borderRadius: '10px', objectFit: 'contain', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', background: '#fff' }}
+                />
+                <div>
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '12px', color: '#1e293b' }}>📺 Sunshine WebTV</h4>
+                  <ul className="service-checklist" style={{ margin: 0 }}>
+                    <li><i className="fas fa-circle-check"></i> Sunshine WebTV is an all-in-one streaming platform for every kind of content lover.</li>
+                    <li><i className="fas fa-circle-check"></i> Offers a wide range of entertainment — web series, movies, short films, documentaries, and music shows.</li>
+                    <li><i className="fas fa-circle-check"></i> Free unlimited streaming available on both the app and website.</li>
+                    <li><i className="fas fa-circle-check"></i> Interactive platform where users can participate in online reality shows.</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Pet Care App */}
+              <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', marginBottom: '10px', padding: '24px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                <img
+                  src="/images/app_bonno.png"
+                  alt="Bonno Pet Care App"
+                  style={{ width: '140px', minWidth: '140px', borderRadius: '10px', objectFit: 'contain', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', background: '#fff' }}
+                />
+                <div>
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '12px', color: '#1e293b' }}>🐶 Pet Care Services App</h4>
+                  <ul className="service-checklist" style={{ margin: 0 }}>
+                    <li><i className="fas fa-circle-check"></i> Pet Boarding – Safe and comfortable accommodation for pets while owners are away.</li>
+                    <li><i className="fas fa-circle-check"></i> Pet Sitting – Trusted caretakers provide at-home care in their familiar environment.</li>
+                    <li><i className="fas fa-circle-check"></i> Pet Grooming – Professional grooming including bathing, trimming, and styling.</li>
+                    <li><i className="fas fa-circle-check"></i> Pet Mating – Assistance in finding the right match based on breed and health compatibility.</li>
+                    <li><i className="fas fa-circle-check"></i> Pet Training – Behavioural and obedience training programs tailored to each pet.</li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div className="service-sidebar fade-in-right" ref={sidebarRef}>

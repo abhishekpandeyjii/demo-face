@@ -41,16 +41,11 @@ export default function Navbar() {
         <div className="container">
           <div className="top-bar-content">
             <div className="top-bar-left">
-              <span><i className="fas fa-phone"></i> <a href="tel:+919860867066">+91- 9860867066</a></span>
+              <span><i className="fas fa-phone"></i> <a href="tel:+919860867066">+91- 9860867066</a> / <a href="tel:+919049540142">+91- 9049540142</a></span>
               <span><i className="fas fa-envelope"></i> <a href="mailto:support@chorevirtual.com">support@chorevirtual.com</a></span>
               <span className="address-span"><i className="fas fa-location-dot"></i> Malad (W), Mumbai 40064</span>
             </div>
-            <div className="top-bar-right">
-              <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-              <a href="#" aria-label="Twitter"><i className="fab fa-x-twitter"></i></a>
-              <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-              <a href="#" aria-label="WhatsApp"><i className="fab fa-whatsapp"></i></a>
-            </div>
+
           </div>
         </div>
       </div>
@@ -59,12 +54,11 @@ export default function Navbar() {
         <nav className="navbar">
           {/* Logo */}
           <Link to="/" className="logo" id="logo">
-            <div className="logo-icon">
-              <i className="fas fa-laptop-code"></i>
-            </div>
-            <div className="logo-text">
-              Chore<span>Digital</span>
-            </div>
+            <img
+              src="/logo.png.jpeg"
+              alt="ChoreVirtual Logo"
+              style={{ height: '70px', width: 'auto', maxWidth: '200px', objectFit: 'contain', display: 'block' }}
+            />
           </Link>
 
           {/* Navigation Menu */}

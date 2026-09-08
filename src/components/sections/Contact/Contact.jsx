@@ -13,7 +13,7 @@ export default function Contact() {
 
   const contactInfo = [
     { icon: 'fas fa-location-dot', title: 'Our Office', text: siteData.company.address },
-    { icon: 'fas fa-phone', title: 'Call Us', text: siteData.company.phone },
+    { icon: 'fas fa-phone', title: 'Call Us', text: siteData.company.phone, text2: siteData.company.phone2 },
     { icon: 'fas fa-envelope', title: 'Email Us', text: siteData.company.email },
   ];
 
@@ -23,7 +23,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     const subject = encodeURIComponent(`New Website Inquiry from ${formData.name}`);
     const body = encodeURIComponent(
       `Hello ChoreVirtual Team,\n\nYou have received a new message from the website contact form:\n\n` +
@@ -34,7 +34,7 @@ export default function Contact() {
       `Message:\n${formData.message}\n\n` +
       `Please reply to ${formData.email}.`
     );
-    
+
     window.location.href = `mailto:${siteData.company.email}?subject=${subject}&body=${body}`;
 
     setSubmitted(true);
@@ -66,11 +66,19 @@ export default function Contact() {
                 <div className="contact-content">
                   <h4>{info.title}</h4>
                   <p>{info.text}</p>
+                  {info.text2 && <p>{info.text2}</p>}
                 </div>
                 {info.title === 'Call Us' && (
-                  <a href={`tel:${info.text.replace(/[^0-9+]/g, '')}`} className="contact-action-btn">
-                    Call Now <i className="fas fa-arrow-right"></i>
-                  </a>
+                  <>
+                    <a href={`tel:${info.text.replace(/[^0-9+]/g, '')}`} className="contact-action-btn" style={{ marginBottom: '10px', display: 'block' }}>
+                      Call Primary <i className="fas fa-arrow-right"></i>
+                    </a>
+                    {info.text2 && (
+                      <a href={`tel:${info.text2.replace(/[^0-9+]/g, '')}`} className="contact-action-btn" style={{ display: 'block' }}>
+                        Call Secondary <i className="fas fa-arrow-right"></i>
+                      </a>
+                    )}
+                  </>
                 )}
                 {info.title === 'Email Us' && (
                   <a href={`mailto:${info.text}`} className="contact-action-btn">
@@ -89,7 +97,7 @@ export default function Contact() {
 
         {/* Map and Form Section */}
         <div className="grid grid-2" style={{ gap: '50px', alignItems: 'flex-start' }}>
-          
+
           {/* Map (Left Side) */}
           <div className="contact-map fade-in">
             <h3 style={{ marginBottom: '24px', fontSize: '22px', fontWeight: 500, color: '#334155', fontFamily: 'serif' }}>Found Us</h3>

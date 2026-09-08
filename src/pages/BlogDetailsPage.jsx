@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import PageBanner from '../components/common/PageBanner/PageBanner';
 import CTA from '../components/sections/CTA/CTA';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -5,6 +6,15 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 export default function BlogDetailsPage() {
   const contentRef = useScrollReveal();
   const sidebarRef = useScrollReveal();
+  const location = useLocation();
+  const post = location.state?.post || {
+    title: 'The Future of Cloud Computing in 2025',
+    image: '/images/hero-tech.jpg',
+    author: 'James Anderson',
+    category: 'Technology',
+    date: { day: '15', month: 'Aug' },
+    excerpt: 'As we approach 2025, the landscape of cloud computing continues to evolve at a breakneck pace. Businesses are no longer just migrating to the cloud; they are leveraging advanced cloud-native technologies to drive innovation, improve agility, and reduce costs.'
+  };
 
   return (
     <>
@@ -23,32 +33,32 @@ export default function BlogDetailsPage() {
             <div className="blog-details-content fade-in-up" ref={contentRef}>
               <div style={{ position: 'relative', borderRadius: 'var(--radius-lg)', overflow: 'hidden', marginBottom: '30px' }}>
                 <img 
-                  src="/images/hero-tech.jpg" 
-                  alt="Blog Post" 
+                  src={post.image} 
+                  alt={post.title} 
                   style={{ width: '100%', display: 'block' }} 
                 />
                 <div className="blog-date-badge" style={{ position: 'absolute', top: '20px', left: '20px', background: 'var(--gradient-primary)', padding: '10px 15px', borderRadius: 'var(--radius-sm)', textAlign: 'center' }}>
-                  <span style={{ display: 'block', fontSize: '24px', fontWeight: '800', color: 'white', lineHeight: '1' }}>15</span>
-                  <span style={{ fontSize: '12px', fontWeight: '600', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase' }}>Aug</span>
+                  <span style={{ display: 'block', fontSize: '24px', fontWeight: '800', color: 'white', lineHeight: '1' }}>{post.date?.day || '15'}</span>
+                  <span style={{ fontSize: '12px', fontWeight: '600', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase' }}>{post.date?.month || 'Aug'}</span>
                 </div>
               </div>
               
               <div style={{ display: 'flex', gap: '20px', marginBottom: '20px', borderBottom: '1px solid var(--border-glass)', paddingBottom: '20px' }}>
                 <span style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
-                  <i className="fas fa-user" style={{ color: 'var(--primary)', marginRight: '8px' }}></i> James Anderson
+                  <i className="fas fa-user" style={{ color: 'var(--primary)', marginRight: '8px' }}></i> {post.author}
                 </span>
                 <span style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
-                  <i className="fas fa-folder" style={{ color: 'var(--primary)', marginRight: '8px' }}></i> Technology
+                  <i className="fas fa-folder" style={{ color: 'var(--primary)', marginRight: '8px' }}></i> {post.category}
                 </span>
                 <span style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
                   <i className="fas fa-comments" style={{ color: 'var(--primary)', marginRight: '8px' }}></i> 3 Comments
                 </span>
               </div>
 
-              <h2 style={{ marginBottom: '20px' }}>The Future of Cloud Computing in 2025</h2>
+              <h2 style={{ marginBottom: '20px' }}>{post.title}</h2>
               
-              <p style={{ marginBottom: '20px' }}>
-                As we approach 2025, the landscape of cloud computing continues to evolve at a breakneck pace. Businesses are no longer just migrating to the cloud; they are leveraging advanced cloud-native technologies to drive innovation, improve agility, and reduce costs.
+              <p style={{ marginBottom: '20px', fontSize: '1.1rem', color: 'var(--text-dark)' }}>
+                {post.excerpt}
               </p>
               
               <p style={{ marginBottom: '30px' }}>

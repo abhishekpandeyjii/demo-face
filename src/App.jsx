@@ -40,6 +40,7 @@ import ResearchWorkPage from './pages/ResearchWorkPage';
 import SitemapPage from './pages/SitemapPage';
 import PrivacyTermsPage from './pages/PrivacyTermsPage';
 import PresentationPage from './pages/PresentationPage';
+import AIAutomationPage from './pages/AIAutomationPage';
 
 // Lenis smooth scroll setup
 import Lenis from 'lenis';
@@ -138,6 +139,7 @@ export default function App() {
           <Route path="/mobile-app-development" element={<MobileAppPage />} />
           <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
           <Route path="/product-development" element={<ProductDevelopmentPage />} />
+          <Route path="/ai-automation" element={<AIAutomationPage />} />
           
           <Route path="/email-management" element={<EmailManagementPage />} />
           <Route path="/data-entry" element={<DataEntryPage />} />

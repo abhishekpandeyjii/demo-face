@@ -69,7 +69,10 @@ export default function Footer() {
               <div className="footer-contact-item">
                 <i className="fas fa-phone"></i>
                 <p>
-                  <a href={`tel:${siteData.company.phone}`}>{siteData.company.phone}</a>
+                  <a href={`tel:${siteData.company.phone}`}>{siteData.company.phone}</a><br />
+                  {siteData.company.phone2 && (
+                    <a href={`tel:${siteData.company.phone2}`}>{siteData.company.phone2}</a>
+                  )}
                 </p>
               </div>
               <div className="footer-contact-item">

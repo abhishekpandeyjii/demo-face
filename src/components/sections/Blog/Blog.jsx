@@ -37,10 +37,10 @@ export default function Blog() {
                     </span>
                   </div>
                   <h4>
-                    <Link to={post.link}>{post.title}</Link>
+                    <Link to={post.link} state={{ post }}>{post.title}</Link>
                   </h4>
                   <p>{post.excerpt}</p>
-                  <Link to={post.link} className="blog-read-more">
+                  <Link to={post.link} state={{ post }} className="blog-read-more">
                     Read More <i className="fas fa-arrow-right"></i>
                   </Link>
                 </div>

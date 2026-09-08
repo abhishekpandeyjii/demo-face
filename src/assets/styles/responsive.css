@@ -7,6 +7,15 @@
   :root {
     --container-max: 1200px;
   }
+  
+  .nav-menu li a,
+  .nav-dropdown-link {
+    padding: 10px 12px;
+  }
+
+  .logo {
+    padding: 25px 40px 25px 0;
+  }
 }
 
 /* ---- Desktop (1200px and below) ---- */
@@ -21,6 +30,16 @@
 
   .hero-stat .number {
     font-size: 2rem;
+  }
+
+  .nav-menu li a,
+  .nav-dropdown-link {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+
+  .logo {
+    padding: 25px 30px 25px 0;
   }
 }
 

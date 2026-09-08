@@ -69,6 +69,74 @@ export default function ProductDevelopmentPage() {
                 </div>
               </div>
 
+              <h3 style={{ fontSize: '1.5rem', marginTop: '35px', marginBottom: '15px' }}>Our Featured Products</h3>
+              <p className="service-text">
+                Explore some of the ready-to-deploy platforms and enterprise solutions we have developed.
+              </p>
+
+              <div className="product-showcase-grid">
+                {[
+                  {
+                    title: "OTS (Order Tracking System Software)",
+                    image: "/images/OTS.png",
+                    features: [
+                      "Real-Time Order Tracking",
+                      "Centralized Dashboard",
+                      "Automated Notifications",
+                      "Inventory Integration",
+                      "Delivery Route Optimization",
+                      "Reporting & Analytics",
+                      "Secure Data Management"
+                    ]
+                  },
+                  {
+                    title: "24*7 SMS Portal",
+                    image: "/images/24_7.png",
+                    features: [
+                      "Instant Message Delivery",
+                      "24*7 Availability",
+                      "Bulk Messaging Support",
+                      "API Integration",
+                      "DLT Compliant",
+                      "Multi-Language Support",
+                      "24*7 Technical Support"
+                    ]
+                  },
+                  {
+                    title: "Billing portal",
+                    image: "/images/SK-product.png",
+                    features: [
+                      "Automated Billing System",
+                      "Product Management",
+                      "Multi-User Access",
+                      "Real-Time Reporting",
+                      "Secure Payment Integration",
+                      "Customer Management",
+                      "Backup & Security"
+                    ]
+                  }
+                ].map((product, idx) => (
+                  <div className="product-showcase-card" key={idx}>
+                    <div className="product-showcase-header">
+                      <h4>{product.title}</h4>
+                    </div>
+                    <div className="product-showcase-image">
+                      <img src={product.image} alt={product.title} />
+                    </div>
+                    <div className="product-showcase-features">
+                      <ul>
+                        {product.features.map((feature, i) => (
+                          <li key={i}>
+                            <i className="fas fa-check-double"></i>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
               <h3 style={{ fontSize: '1.5rem', marginTop: '35px', marginBottom: '15px' }}>Why Choose Chore Virtual For Product Development?</h3>
               <p className="service-text">
                 We&apos;ve helped launch 50+ digital products across industries including fintech, healthtech, edtech, and e-commerce. Our track record speaks for itself — products that users love and investors fund.

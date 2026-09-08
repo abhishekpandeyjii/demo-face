@@ -1,9 +1,17 @@
+import { useLocation } from 'react-router-dom';
 import PageBanner from '../components/common/PageBanner/PageBanner';
 import CTA from '../components/sections/CTA/CTA';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function PortfolioDetailsPage() {
   const contentRef = useScrollReveal();
+  const location = useLocation();
+  const project = location.state?.project || {
+    title: 'E-Commerce Platform Redesign',
+    image: '/images/portfolio_ecommerce.png',
+    description: 'We partnered with a leading retail brand to completely overhaul their digital storefront. The goal was to create a modern, high-performance e-commerce platform that provides a seamless shopping experience across all devices.',
+    categoryLabel: 'Web Development'
+  };
 
   return (
     <>
@@ -19,18 +27,17 @@ export default function PortfolioDetailsPage() {
         <div className="container">
           <div className="portfolio-details-image fade-in-up" ref={contentRef} style={{ marginBottom: '50px' }}>
             <img 
-              src="/images/portfolio_ecommerce.png" 
-              alt="Project Showcase" 
+              src={project.image} 
+              alt={project.title} 
               style={{ width: '100%', borderRadius: 'var(--radius-xl)' }} 
             />
           </div>
 
           <div className="grid grid-7-5">
             <div className="project-description">
-              <h2 style={{ marginBottom: '20px' }}>E-Commerce Platform Redesign</h2>
+              <h2 style={{ marginBottom: '20px' }}>{project.title}</h2>
               <p style={{ marginBottom: '20px' }}>
-                We partnered with a leading retail brand to completely overhaul their digital storefront. 
-                The goal was to create a modern, high-performance e-commerce platform that provides a seamless shopping experience across all devices.
+                {project.description}
               </p>
               <p>
                 By implementing a headless architecture and integrating AI-powered product recommendations, we were able to significantly boost conversion rates and improve overall site speed.
@@ -54,7 +61,7 @@ export default function PortfolioDetailsPage() {
               
               <div style={{ marginBottom: '20px' }}>
                 <span style={{ display: 'block', fontSize: '13px', color: 'var(--text-muted)', marginBottom: '5px' }}>Category</span>
-                <strong style={{ color: 'var(--text-dark)' }}>Web Development</strong>
+                <strong style={{ color: 'var(--text-dark)' }}>{project.categoryLabel || project.category || 'Web Development'}</strong>
               </div>
               
               <div style={{ marginBottom: '20px' }}>

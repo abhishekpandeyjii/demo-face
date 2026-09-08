@@ -40,7 +40,7 @@ export default function Portfolio() {
           {filteredProjects.map((project, index) => (
             <div className={`fade-in delay-${(index % 3) + 1}`} key={`${project.title}-${index}`}>
               <div className="portfolio-card">
-                <Link to="/portfolio-details" className="portfolio-image" style={{ display: 'block' }}>
+                <Link to={project.link || '/portfolio-details'} className="portfolio-image" style={{ display: 'block' }}>
                   <img src={project.image} alt={project.title} />
                   <div className="portfolio-overlay">
                     <span className="portfolio-category">{project.categoryLabel}</span>

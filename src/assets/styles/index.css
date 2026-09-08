@@ -490,20 +490,12 @@ p {
   gap: 10px;
   z-index: 100;
   position: relative;
-  padding: 25px 60px 25px 0;
+  padding: 8px 50px 8px 0;
+  text-decoration: none;
 }
 
 .logo::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100vw;
-  right: 0;
-  background: var(--primary);
-  z-index: -1;
-  transform: skewX(-20deg);
-  transform-origin: bottom left;
+  display: none;
 }
 
 .logo-icon {
@@ -551,6 +543,7 @@ p {
   align-items: center;
   gap: 6px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .nav-menu li a:hover,
@@ -830,9 +823,9 @@ p {
 }
 
 .hero-title {
-  font-size: 64px;
+  font-size: 44px;
   font-weight: 900;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 24px;
   letter-spacing: -1px;
   color: #ffffff;
@@ -2148,7 +2141,10 @@ p {
 .premium-contact-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 24px;
   padding: 2px;
   background: linear-gradient(135deg, rgba(24, 104, 232, 0.2), rgba(24, 104, 232, 0));
@@ -2272,7 +2268,9 @@ p {
 }
 
 @keyframes spin {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .contact-form-wrapper {
