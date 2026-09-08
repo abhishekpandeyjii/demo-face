@@ -211,7 +211,7 @@
   }
 
   /* Grid */
-  .grid-2, .grid-3, .grid-4, .grid-5-7, .grid-7-5 {
+  .grid-2, .grid-3, .grid-4, .grid-5-7, .grid-7-5, .product-showcase-grid {
     grid-template-columns: 1fr;
   }
 }

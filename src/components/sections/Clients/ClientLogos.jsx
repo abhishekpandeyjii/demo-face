@@ -18,7 +18,7 @@ export default function ClientLogos({ isGrid = false }) {
         )}
 
         {isGrid ? (
-          <div className="grid grid-4 fade-in" ref={ref} style={{ gap: '30px' }}>
+          <div className="grid client-logo-grid fade-in" ref={ref} style={{ gap: '30px' }}>
             {siteData.clientLogos.map((client, index) => (
               <div
                 key={index}
