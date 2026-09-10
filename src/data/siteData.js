@@ -12,9 +12,12 @@ export const siteData = {
     phone: '+91- 9860867066',
     phone2: '+91- 9049540142',
     whatsapp: '+91- 98608 67066',
-    email: 'support@chorevirtual.com',
+    email: import.meta.env.VITE_COMPANY_EMAIL || 'support@chorevirtual.com',
     accountsEmail: 'accounts@chorevirtual.com',
     address: '606 Ijmima, Opp Interface off Link Road Malad (W) Mumbai 40064',
+    coordinates: { lat: 19.18365495515128, lng: 72.831653357265 },
+    mapEmbedUrl: 'https://maps.google.com/maps?q=19.18365495515128,72.831653357265&z=16&output=embed',
+    directionsUrl: 'https://maps.google.com/maps?q=19.18365495515128,72.831653357265',
     founded: 2014,
   },
 

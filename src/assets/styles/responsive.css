@@ -387,13 +387,14 @@
     padding: 30px 22px;
   }
 
-  /* Back to Top */
+  /* Back to Top - Position above Chatbot on mobile */
   .back-to-top {
-    bottom: 20px;
+    bottom: 90px;
     right: 20px;
     width: 42px;
     height: 42px;
     font-size: 16px;
+    z-index: 999;
   }
 
   /* Blog Meta */
@@ -414,6 +415,20 @@
   /* Contact */
   .contact-form-wrapper {
     padding: 24px 20px;
+  }
+
+  .contact-map iframe {
+    height: 300px !important;
+  }
+
+  /* Events Section Mobile */
+  .events-filter-bar {
+    gap: 8px;
+  }
+  
+  .events-filter-btn {
+    padding: 8px 16px;
+    font-size: 13px;
   }
 
   /* Page Banner */
@@ -439,4 +454,19 @@
   .nav-menu {
     width: 100%;
   }
+
+  .contact-map iframe {
+    height: 250px !important;
+  }
 }
+
+/* Global Mobile Touch & Overflow Fixes */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+img, iframe, video {
+  max-width: 100%;
+}
+

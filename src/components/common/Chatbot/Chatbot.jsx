@@ -89,7 +89,8 @@ ${JSON.stringify(siteData)}`
     const subject = encodeURIComponent("New Inquiry from ChoreDigital Chatbot");
     const body = encodeURIComponent(`Hello ChoreDigital Team,\n\nHere is a new inquiry from the website chatbot:\n\n${transcript}\n\nPlease get back to me.\n\nThanks!`);
     
-    window.location.href = `mailto:support@chorevirtual.com?subject=${subject}&body=${body}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=support@chorevirtual.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
   };
 
   return (

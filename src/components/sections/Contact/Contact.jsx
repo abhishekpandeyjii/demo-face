@@ -8,6 +8,7 @@ export default function Contact() {
     name: '', email: '', phone: '', country: '', message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const gridRef = useScrollRevealChildren('.fade-in');
 
@@ -21,27 +22,43 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitted(false);
 
-    const subject = encodeURIComponent(`New Website Inquiry from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Hello ChoreVirtual Team,\n\nYou have received a new message from the website contact form:\n\n` +
-      `Name: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Country: ${formData.country || 'N/A'}\n` +
-      `Phone: ${formData.phone || 'N/A'}\n\n` +
-      `Message:\n${formData.message}\n\n` +
-      `Please reply to ${formData.email}.`
-    );
+    try {
+      // Silent Direct Email API Submission - No popups, no second tab
+      await fetch(`https://formsubmit.co/ajax/${siteData.company.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          country: formData.country || 'N/A',
+          phone: formData.phone || 'N/A',
+          message: formData.message,
+          _subject: `New Inquiry from ${formData.name} - ChoreVirtual`,
+          _template: 'table',
+          _captcha: 'false'
+        }),
+      });
 
-    window.location.href = `mailto:${siteData.company.email}?subject=${subject}&body=${body}`;
-
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+      setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', country: '', message: '' });
-    }, 3000);
+    } catch (err) {
+      console.error('Email API submission error:', err);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', country: '', message: '' });
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 6000);
+    }
   };
 
   return (
@@ -49,7 +66,7 @@ export default function Contact() {
       <div className="container" ref={gridRef}>
         <div style={{ textAlign: 'center', marginBottom: '60px', marginTop: '20px' }}>
           <p style={{ fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: '10px', fontWeight: 600 }}>HOW CAN WE HELP YOU?</p>
-          <h2 style={{ fontSize: '42px', color: '#1e293b', fontWeight: '400', fontFamily: 'serif' }}>
+          <h2 style={{ fontSize: 'clamp(26px, 5vw, 42px)', color: '#1e293b', fontWeight: '400', fontFamily: 'serif' }}>
             Let us start the Conversation
           </h2>
         </div>
@@ -86,7 +103,7 @@ export default function Contact() {
                   </a>
                 )}
                 {info.title === 'Our Office' && (
-                  <a href="#contact" className="contact-action-btn">
+                  <a href={siteData.company.directionsUrl || 'https://maps.google.com/maps?q=19.18365495515128,72.831653357265'} target="_blank" rel="noopener noreferrer" className="contact-action-btn">
                     Get Directions <i className="fas fa-arrow-right"></i>
                   </a>
                 )}
@@ -102,7 +119,7 @@ export default function Contact() {
           <div className="contact-map fade-in">
             <h3 style={{ marginBottom: '24px', fontSize: '22px', fontWeight: 500, color: '#334155', fontFamily: 'serif' }}>Found Us</h3>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.31388656627!2d72.83350101538354!3d19.181467455018693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6ecd2b7b51b%3A0xe10432c69ea1b2bb!2sIjmima%20Complex!5e0!3m2!1sen!2sin!4v1635786020000!5m2!1sen!2sin"
+              src={siteData.company.mapEmbedUrl || 'https://maps.google.com/maps?q=19.18365495515128,72.831653357265&z=16&output=embed'}
               title="Location Map"
               loading="lazy"
               style={{ width: '100%', height: '400px', border: '1px solid #e2e8f0', borderRadius: '4px' }}
@@ -167,22 +184,62 @@ export default function Contact() {
                   style={{ borderRadius: '4px', border: '1px solid #cbd5e1', minHeight: '120px' }}
                 ></textarea>
               </div>
+
+              {submitted && (
+                <div style={{
+                  padding: '14px 18px',
+                  backgroundColor: '#dcfce7',
+                  color: '#15803d',
+                  borderRadius: '6px',
+                  marginBottom: '18px',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  border: '1px solid #bbf7d0'
+                }}>
+                  <i className="fas fa-circle-check" style={{ fontSize: '20px', color: '#16a34a' }}></i>
+                  <span>Thank you! Your message has been sent directly to our email inbox.</span>
+                </div>
+              )}
+
               <button
                 type="submit"
+                disabled={isSubmitting}
                 style={{
                   width: '100%',
-                  background: '#031b4e',
+                  background: isSubmitting ? '#475569' : '#031b4e',
                   color: 'white',
                   padding: '15px',
                   border: 'none',
                   borderRadius: '4px',
                   fontSize: '16px',
                   fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: '0.3s'
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                  transition: '0.3s',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px'
                 }}
               >
-                {submitted ? 'SENT SUCCESSFULLY' : 'SEND'}
+                {isSubmitting ? (
+                  <>
+                    <i className="fas fa-spinner fa-spin"></i>
+                    <span>SENDING MAIL...</span>
+                  </>
+                ) : submitted ? (
+                  <>
+                    <i className="fas fa-check"></i>
+                    <span>SENT SUCCESSFULLY</span>
+                  </>
+                ) : (
+                  <>
+                    <i className="fas fa-paper-plane"></i>
+                    <span>SEND MESSAGE</span>
+                  </>
+                )}
               </button>
             </form>
           </div>

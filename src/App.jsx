@@ -134,13 +134,13 @@ export default function App() {
           <Route path="/blog-details" element={<BlogDetailsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/pricing" element={<PricingPage />} />
-          
+
           <Route path="/website-design" element={<WebDesignPage />} />
           <Route path="/mobile-app-development" element={<MobileAppPage />} />
           <Route path="/digital-marketing" element={<DigitalMarketingPage />} />
           <Route path="/product-development" element={<ProductDevelopmentPage />} />
           <Route path="/ai-automation" element={<AIAutomationPage />} />
-          
+
           <Route path="/email-management" element={<EmailManagementPage />} />
           <Route path="/data-entry" element={<DataEntryPage />} />
           <Route path="/customer-support" element={<CustomerSupportPage />} />
